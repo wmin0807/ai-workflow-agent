@@ -1,5 +1,6 @@
 # src/day3_agent.py
 import os
+import sys
 import asyncio
 import json
 import re
@@ -7,8 +8,11 @@ from openai import AsyncOpenAI
 from pydantic import BaseModel, ConfigDict
 from dotenv import load_dotenv
 
-from prompts import WORKFLOW_PLANNER_SYSTEM
-from tools.base import tool_registry
+# Add the project root to sys.path to allow absolute imports
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+
+from src.prompts.system import WORKFLOW_PLANNER_SYSTEM
+from src.tools.base import tool_registry
 
 load_dotenv()
 
