@@ -26,5 +26,8 @@ __pycache__/
 
 # 日志
 *.log
-EOF
 
+# 报告
+reports/
+
+EOF
